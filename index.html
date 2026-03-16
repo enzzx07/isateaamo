@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Broma</title>
+<style>
+body{
+  text-align:center;
+  font-family:Arial;
+  margin-top:50px;
+}
+
+video{
+  width:250px;
+}
+
+button{
+  padding:10px 20px;
+  font-size:18px;
+  margin:10px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<video id="video" autoplay loop muted>
+  <source src="video1.mp4" type="video/mp4">
+</video>
+
+<h2 id="texto">Isa queres ser mi novia?</h2>
+
+<button id="si">Sí</button>
+<button id="no">No</button>
+
+<script>
+let si = document.getElementById("si");
+let no = document.getElementById("no");
+
+let sizeSi = 18;
+let sizeNo = 18;
+
+no.onclick = function(){
+  sizeSi += 10;
+  sizeNo -= 4;
+
+  si.style.fontSize = sizeSi + "px";
+  no.style.fontSize = sizeNo + "px";
+}
+
+si.onclick = function(){
+  document.getElementById("video").src = "video2.mp4";
+  document.getElementById("texto").innerText = "Sabía q ibas a decir q si jjejej";
+  si.style.display="none";
+  no.style.display="none";
+}
+</script>
+
+</body>
+</html>
